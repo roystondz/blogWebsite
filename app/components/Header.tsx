@@ -75,9 +75,11 @@ const Header: React.FC = () => {
             Login
           </a>o */}
 
-            <Link href="/login">
-                <button className="btn mobile-login-btn">Login</button>
-            </Link>
+<Link href="/auth/">
+  <button className="btn mobile-login-btn">Login</button>
+</Link>
+
+
           {/* Mobile Menu Toggle Button */}
           <button
             className={`nav-toggle-btn ${isMenuVisible ? 'active' : ''}`}
