@@ -1,5 +1,5 @@
 import Image from "next/image";
-import AuthForm from "./auth/page";
+import AuthForm from "./auth/login";
 import Header from "./components/Header";
 import FeaturedSection from "./components/FeaturedCollection";
 import Hero from "./components/Hero";
