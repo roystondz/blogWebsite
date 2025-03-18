@@ -12,7 +12,7 @@ const AuthForm: React.FC = () => {
 
         {/* Forms Container */}
         <div
-          className={`absolute w-full h-full flex transition-transform duration-500 ${isSignUp ? "translate-x-[-100%]" : "translate-x-0"}`}
+          className={`absolute w-full h-full flex transition-transform duration-500 ${isSignUp ? "translate-x-[100]" : "translate-x-0"}`}
         >
           {/* Sign In Form */}
           <div className="w-1/2 flex flex-col items-center justify-center px-10">
