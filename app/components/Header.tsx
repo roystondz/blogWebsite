@@ -50,11 +50,6 @@ const Header: React.FC = () => {
                 Recent Post
               </a>
             </li>
-            <li className="navbar-item">
-              <a href="#" className="navbar-link hover:underline" data-nav-link onClick={closeAll}>
-                Membership
-              </a>
-            </li>
           </ul>
         </nav>
 
