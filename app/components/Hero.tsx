@@ -25,6 +25,8 @@ const Hero = () => {
           </p>
         </div>
       </div>
+
+      <div className="gradient-line"></div>
     </section>
   );
 };
