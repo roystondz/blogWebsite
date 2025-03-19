@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import IonIcon from './IonIcon';
@@ -18,35 +18,29 @@ const Header: React.FC = () => {
     if (isSearchBarVisible) setIsSearchBarVisible(false);
   };
 
-  const closeAll = () => {
-    setIsSearchBarVisible(false);
-    setIsMenuVisible(false);
-  };
-
   return (
     <header className="header section" data-header>
       <div className="container">
         {/* Logo */}
         <a href="#" className="logo">
-  <Image
-    src="/assets/images/BlogSit (1).png" // Remove "/public"
-    width={129}
-    height={40}
-    alt="Blogsite logo"
-  />
-</a>
-
+          <Image
+            src="/assets/images/BlogSit (1).png"
+            width={129}
+            height={40}
+            alt="Blogsite logo"
+          />
+        </a>
 
         {/* Navigation Menu */}
         <nav className={`navbar ${isMenuVisible ? 'active' : ''}`} data-navbar>
           <ul className="navbar-list">
             <li className="navbar-item">
-              <a href="#" className="navbar-link hover:underline" data-nav-link onClick={closeAll}>
+              <a href="#" className="navbar-link hover:underline" data-nav-link>
                 Home
               </a>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link hover:underline" data-nav-link onClick={closeAll}>
+              <a href="#" className="navbar-link hover:underline" data-nav-link>
                 Recent Post
               </a>
             </li>
@@ -65,15 +59,10 @@ const Header: React.FC = () => {
             <IonIcon name="search-outline" ariaHidden={true} />
           </button>
 
-          {/* Login Button 
-          <a href="./Login.tsx" className="btn mobile-login-btn">
-            Login
-          </a>o */}
-
-<Link href="/auth/">
-  <button className="btn mobile-login-btn">Login</button>
-</Link>
-
+          {/* Login Button */}
+          <Link href="/auth/">
+            <button className="btn mobile-login-btn">Login</button>
+          </Link>
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -91,7 +80,7 @@ const Header: React.FC = () => {
 
       {/* Search Bar (Conditionally Rendered) */}
       {isSearchBarVisible && (
-        <div className="search-bar" data-search-bar>
+        <div className={`search-bar ${isSearchBarVisible ? 'active' : ''}`} data-search-bar>
           <div className="input-wrapper">
             <input
               type="search"
@@ -115,9 +104,12 @@ const Header: React.FC = () => {
       {/* Overlay (Conditionally Rendered) */}
       {(isSearchBarVisible || isMenuVisible) && (
         <div
-          className="overlay"
+          className={`overlay ${isSearchBarVisible || isMenuVisible ? 'active' : ''}`}
           data-overlay
-          onClick={closeAll}
+          onClick={() => {
+            setIsSearchBarVisible(false);
+            setIsMenuVisible(false);
+          }}
         ></div>
       )}
     </header>
