@@ -20,9 +20,9 @@ const Hero = () => {
           </form>
           
 
-          {/* <p className="newsletter-text">
+          <p className="newsletter-text">
             Get the email newsletter and unlock access to members-only content and updates
-          </p> */}
+          </p>
         </div>
       </div>
     </section>
