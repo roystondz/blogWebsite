@@ -1,0 +1,93 @@
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+    padding-block: 80px 120px; /* Increased padding for taller hero section */
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%, /* Transparent at the top */
+      var(--light-blue-ryb) 100% Lighter bluish color at the bottom
+    );
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-inline: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: var(--fs-1);
+    font-weight: var(--fw-300);
+    color: var(--eerie-black);
+    margin-block-end: 30px; /* Space below the title */
+    line-height: 1.2;
+    margin-block-end: 50px;
+  }
+  
+  .hero .newsletter-text {
+    display: block;
+    max-width: 500px;
+    color: var(--eerie-black_80);
+    font-size: var(--fs-5);
+    line-height: 1.5;
+    margin-block-end: 40px; /* Space below the text */
+  }
+  
+  .hero .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .hero .newsletter-form {
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  .hero .newsletter-form .email-field {
+    background-color: var(--cultured);
+    color: var(--eerie-black);
+    font-size: var(--fs-6);
+    padding: 16px 24px;
+    padding-inline-end: 140px;
+    border-radius: var(--radius-pill);
+    width: 100%;
+    transition: var(--transition-1);
+  }
+  
+  .hero .newsletter-form .email-field:focus {
+    background-color: var(--gainsboro);
+  }
+  
+  .hero .newsletter-form .email-field::placeholder {
+    color: var(--eerie-black_60);
+  }
+  
+  .hero .newsletter-form .btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    height: fit-content;
+    background-color: var(--blue-ryb);
+    color: var(--white);
+    font-size: var(--fs-5);
+    font-weight: var(--fw-500);
+    padding: 12px 24px;
+    border-radius: var(--radius-pill);
+    transition: var(--transition-1);
+  }
+  
+  .hero .newsletter-form .btn:is(:hover, :focus) {
+    background-color: var(--eerie-black);
+  }
