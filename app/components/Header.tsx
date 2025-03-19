@@ -88,6 +88,15 @@ const Header: React.FC = () => {
               placeholder="Search"
               className="input-field"
             />
+            {/* Search Icon Inside the Search Bar */}
+            <button
+              className="search-submit-btn"
+              aria-label="submit search"
+              type="submit"
+            >
+              <IonIcon name="search-outline" ariaHidden={true} />
+            </button>
+            {/* Close Button */}
             <button
               className="search-close-btn"
               aria-label="close search bar"
