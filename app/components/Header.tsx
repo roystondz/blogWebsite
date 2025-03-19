@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import IonIcon from './IonIcon';
 import Link from 'next/link';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Header: React.FC = () => {
   const [isSearchBarVisible, setIsSearchBarVisible] = useState<boolean>(false);
@@ -51,13 +52,13 @@ const Header: React.FC = () => {
         <div className="wrapper">
           {/* Search Button (Visible on Mobile) */}
           <button
-            className="search-btn mobile-search-btn"
+            className="search-btn"
             aria-label="search"
             onClick={toggleSearchBar}
-            data-search-toggler
           >
-            <IonIcon name="search-outline" ariaHidden={true} />
+              <SearchIcon />
           </button>
+
 
           {/* Login Button */}
           <Link href="/auth/">
