@@ -4,7 +4,7 @@ import BlogCard from './BlogCard';
 const FeaturedSection: React.FC = () => {
   const blogPosts = [
     {
-      imageSrc: '/assets/images/featured-1.jpg',
+      imageSrc: '/assets/images/featured-1.avif',
       imageAlt: 'New technology is not good or evil in and of itself',
       authors: [
         { src: '/assets/images/author-1.jpg', alt: 'Author 1' },
@@ -18,36 +18,31 @@ const FeaturedSection: React.FC = () => {
   ];
 
   return (
-    <section className="section featured" aria-label="featured post">
-      <div className="container">
-        <p className="section-subtitle">
-          Get started with our <strong className="strong">best stories</strong>
-        </p>
+   <section className="section featured" aria-label="featured post">
+  <div className="container">
+    <p className="section-subtitle">
+      Get started with our <strong className="strong">best stories</strong>
+    </p>
 
-        <ul className="has-scrollbar">
-          {blogPosts.map((post, index) => (
-            <li key={index} className="scrollbar-item">
-              <BlogCard {...post} />
-            </li>
-          ))}
-             {blogPosts.map((post, index) => (
-            <li key={index} className="scrollbar-item">
-              <BlogCard {...post} />
-            </li>
-          ))}
-             {blogPosts.map((post, index) => (
-            <li key={index} className="scrollbar-item">
-              <BlogCard {...post} />
-            </li>
-          ))}
-             {/* {blogPosts.map((post, index) => (
-            <li key={index} className="scrollbar-item">
-              <BlogCard {...post} />
-            </li>
-          ))}    */}
-        </ul>
-      </div>
-    </section>
+    <ul className="has-scrollbar">
+      {blogPosts.map((post, index) => (
+        <li key={index} className="scrollbar-item">
+          <BlogCard {...post} />
+        </li>
+      ))}
+        {blogPosts.map((post, index) => (
+        <li key={index} className="scrollbar-item">
+          <BlogCard {...post} />
+        </li>
+      ))}
+        {blogPosts.map((post, index) => (
+        <li key={index} className="scrollbar-item">
+          <BlogCard {...post} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
   );
 };
 
