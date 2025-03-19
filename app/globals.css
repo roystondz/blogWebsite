@@ -114,7 +114,7 @@ body {
     180deg, /* Vertical gradient */
     var(--white) 0%, /* White at the top */
     var(--white) 10%, /* Keep the header area white */
-    var(--light-blue-ryb) 100% /* Lighter bluish color at the bottom */
+    var(--light-blue-ryb) 60% /* Lighter bluish color at the bottom */
   );
   min-height: 100vh; /* Ensure gradient covers the full viewport height */
   margin: 0;
@@ -416,6 +416,7 @@ body {
 .hero .container {
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 20px;
   padding-inline: 15px;
   display: flex;
   flex-direction: column;
@@ -429,6 +430,7 @@ body {
   color: var(--eerie-black);
   margin-block-end: 30px; /* Space below the title */
   line-height: 1.2;
+  margin-block-end: 50px;
 }
 
 .hero .newsletter-text {
@@ -476,9 +478,10 @@ body {
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+  height: fit-content;
   background-color: var(--blue-ryb);
   color: var(--white);
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   font-weight: var(--fw-500);
   padding: 12px 24px;
   border-radius: var(--radius-pill);
@@ -793,4 +796,40 @@ body {
     grid-column: auto;
     padding-inline-end: 100px;
   }
+}
+
+
+/* ADJUSTMENT OVERRRIDING */
+
+.email-field:focus {
+  background-color: var(--gainsboro);
+}
+
+/* Subscribe button */
+.subscribe-btn {
+  /* background-color: var(--blue-ryb);
+  color: var(--white); */
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.subscribe-btn:hover {
+  background-color: var(--eerie-black);
+}
+/* Gradient for Featured Section */
+/* Increase specificity */
+section.section.featured {
+  background: linear-gradient(
+    180deg,
+    rgba(53, 7, 170, 0) 0%,
+    var(--light-blue-ryb) 100%
+  );
+  padding-block: 80px 120px;
+  position: relative;
+  overflow: hidden;
 }

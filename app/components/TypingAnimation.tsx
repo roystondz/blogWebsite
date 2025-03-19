@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+
 const TypingAnimation: React.FC = () => {
   const sentences = [
     "Hey, we’re BlogSite.",
@@ -12,8 +13,8 @@ const TypingAnimation: React.FC = () => {
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const typingSpeed = 50; // Speed of typing (in milliseconds)
-  const deletingSpeed = 30; 
-  const pauseBetweenSentences = 1000; 
+  const deletingSpeed = 30; // Speed of deleting (in milliseconds)
+  const pauseBetweenSentences = 1000; // Pause between sentences (in milliseconds)
 
   useEffect(() => {
     const handleTyping = () => {
@@ -48,7 +49,7 @@ const TypingAnimation: React.FC = () => {
     <div className="container">
       <h1 className="h1 hero-title">
         <strong className="strong">{currentText}</strong>
-        <span className="cursor">|</span> {/* Cursor animation */}
+        {/* Cursor symbol removed */}
       </h1>
     </div>
   );

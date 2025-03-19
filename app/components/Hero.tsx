@@ -21,7 +21,7 @@ const Hero = () => {
           
 
           <p className="newsletter-text">
-            Get the email newsletter and unlock access to members-only content and updates
+          Get the <strong> email newsletter</strong> and acces to updates
           </p>
         </div>
       </div>
