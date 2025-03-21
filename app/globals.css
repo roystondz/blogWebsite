@@ -130,15 +130,21 @@ body {
       var(--white) 10%, /* Keep the header area white */
       var(--light-blue-ryb) 90% /* Lighter bluish color at the bottom */
     );
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> 1154615bdfda68dd1229a48c33b786b5f07ef89e
   min-height: 100vh; /* Ensure gradient covers the full viewport height */
   margin: 0;
   padding: 0;
   font-family: var(--ff-inter);
   color: var(--eerie-black);
   font-size: 1.6rem;
+<<<<<<< HEAD
   
+=======
+>>>>>>> 1154615bdfda68dd1229a48c33b786b5f07ef89e
   line-height: 1.5;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -340,11 +346,18 @@ body {
   gap: 30px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1154615bdfda68dd1229a48c33b786b5f07ef89e
 /*
   >>>>>>>>>>>>>>>>>>>>
 
   HAHDER ,HERO, FOOTER, MEDIA QUERY IN ANOTHER FILE --->>> 
   
   >>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<< HEAD
   */
+=======
+  */
+>>>>>>> 1154615bdfda68dd1229a48c33b786b5f07ef89e
