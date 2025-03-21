@@ -222,9 +222,64 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    width: 100%; /* Full width on small screens */
-    min-height: 100vh; /* Full height on small screens */
-    border-radius: 0; /* Remove rounded corners */
+    .container {
+      width: 90%; /* Slightly smaller width for better fit */
+      min-height: 90vh; 
+      border-radius: 0; /* Remove rounded corners */
+      margin: 20px auto; 
+    }
+  
+    .formContainer {
+      padding: 0 20px; 
+    }
+  
+    .togglePanel {
+      padding: 0 20px; 
+    }
+  
+    .container button {
+      padding: 8px 30px; 
+      font-size: 11px; 
+    }
+  
+    .container input {
+      padding: 8px 12px; 
+      font-size: 12px; 
+    }
+  
+    .socialIcons a {
+      width: 35px; 
+      height: 35px;
+    }
   }
-}
+  
+  @media (max-width: 480px) {
+    .container {
+      width: 100%; /* Full width on very small screens */
+      min-height: 100vh;
+      margin: 0; /* Remove margin for full-width layout */
+    }
+  
+    .formContainer {
+      padding: 0 10px; /* fixed responsiveness for the frikking mobile  */
+    }
+  
+    .togglePanel {
+      padding: 0 10px; 
+    }
+  
+    .container button {
+      padding: 6px 20px; 
+      font-size: 10px; 
+    }
+  
+    .container input {
+      padding: 6px 10px; 
+      font-size: 11px; 
+    }
+  
+    .socialIcons a {
+      width: 30px; /* Even smaller social icons */
+      height: 30px;
+    }
+  }
