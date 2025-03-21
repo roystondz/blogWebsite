@@ -5,7 +5,7 @@ import styles from "./page.module.css"; // Import the CSS module
 const AuthForm = () => {
   const [isActive, setIsActive] = useState(false);
 
-  return (
+  return (  
     <div className={`${styles.container} ${isActive ? styles.active : ""}`} id="container">
       <div className={`${styles.formContainer} ${styles.signUp}`}>
         <form>
@@ -65,8 +65,8 @@ const AuthForm = () => {
             </button>
           </div>
           <div className={`${styles.togglePanel} ${styles.toggleRight}`}>
-            <h1>Hello, there!</h1>
-            <p>Register with your personal details to use all site features</p>
+            <h1>New User ? </h1>
+            <p>Register with your personal details </p>
             <button className={styles.hidden} onClick={() => setIsActive(true)}>
               Sign Up
             </button>
