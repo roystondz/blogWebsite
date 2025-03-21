@@ -130,12 +130,15 @@ body {
       var(--white) 10%, /* Keep the header area white */
       var(--light-blue-ryb) 90% /* Lighter bluish color at the bottom */
     );
+
+    
   min-height: 100vh; /* Ensure gradient covers the full viewport height */
   margin: 0;
   padding: 0;
   font-family: var(--ff-inter);
   color: var(--eerie-black);
   font-size: 1.6rem;
+  
   line-height: 1.5;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -336,6 +339,7 @@ body {
   display: grid;
   gap: 30px;
 }
+
 
 /*
   >>>>>>>>>>>>>>>>>>>>
