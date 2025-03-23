@@ -116,22 +116,22 @@ html {
 \*-----------------------------------*/
 
 body {
-  background: 
+  /* background: 
     radial-gradient(
-      circle at center, /* Circular gradient centered */
-      var(--light-blue-ryb) 0%, /* Dark color at the edges */
-      var(--light-blue-ryb  ) 20%, /* Dark color fading */
-      var(--white) 70%, /* White in the middle */
-      var(--white) 100% /* White at the center */
+      circle at center, 
+      var(--light-blue-ryb) 0%, 
+      var(--light-blue-ryb  ) 20%, 
+      var(--white) 70%, 
+      var(--white) 100% 
     ),
     linear-gradient(
-      180deg, /* Vertical gradient */
-      var(--white) 0%, /* White at the top */
-      var(--white) 10%, /* Keep the header area white */
-      var(--light-blue-ryb) 90% /* Lighter bluish color at the bottom */
+      180deg, 
+      var(--white) 0%, 
+      var(--white) 10%, 
+      var(--light-blue-ryb) 90% 
     );
-    
-  min-height: 100vh; /* Ensure gradient covers the full viewport height */
+     */
+  min-height: 100vh; 
   margin: 0;
   padding: 0;
   font-family: var(--ff-inter);
@@ -338,3 +338,18 @@ body {
   display: grid;
   gap: 30px;
 }
+
+
+  /**
+   * RECOMMENDED POST
+   */
+
+   .recommended .grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 10px;
+    justify-content: center;
+    align-items: start;
+  }
+  

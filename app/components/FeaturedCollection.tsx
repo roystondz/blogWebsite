@@ -42,6 +42,15 @@ const FeaturedSection: React.FC = () => {
       ))}
     </ul>
   </div>
+  <br>
+  </br>
+  <br></br>
+  <br></br>
+  <br></br>
+  <div className="gradient-line"></div>
+<br>
+</br>
+<br></br>
 </section>
   );
 };
