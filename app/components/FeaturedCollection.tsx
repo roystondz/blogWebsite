@@ -40,6 +40,11 @@ const FeaturedSection: React.FC = () => {
           <BlogCard {...post} />
         </li>
       ))}
+          {blogPosts.map((post, index) => (
+        <li key={index} className="scrollbar-item">
+          <BlogCard {...post} />
+        </li>
+      ))}
     </ul>
   </div>
   <br>

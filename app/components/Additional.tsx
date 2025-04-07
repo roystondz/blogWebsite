@@ -1,14 +1,41 @@
-import React from "react";
+"use client"
+import React, { useEffect, useRef } from "react";
 
 const RecentPosts: React.FC = () => {
+  const postRefs = useRef<(HTMLLIElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Stop observing once the element is visible
+          }
+        }); 
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+      }
+    );
+
+    postRefs.current.forEach((post) => {
+      if (post) observer.observe(post);
+    });
+
+    return () => {
+      postRefs.current.forEach((post) => {
+        if (post) observer.unobserve(post);
+      });
+    };
+  }, []);
+
   return (
-    
     <section className="section recent" aria-label="recent post">
-        
       <div className="container">
         <div className="title-wrapper">
           <h2 className="h2 section-title">
-            See what we’ve <strong className="strong">written lately</strong>
+            Recent <strong className="strong">Posts</strong>
           </h2>
 
           <div className="top-author">
@@ -36,8 +63,8 @@ const RecentPosts: React.FC = () => {
           {[
             {
               id: 1,
-              image: "recent-1.jpg",
-              authors: [3, 5],
+              image: "recent-1.avif",
+              authors: [1, 2],
               tags: ["Lifestyle", "People", "Review"],
               title: "Creating is a privilege but it’s also a gift",
               text: "Nullam vel risus.",
@@ -82,8 +109,12 @@ const RecentPosts: React.FC = () => {
               title: "Your voice, your mind, your story, your vision",
               text: "Nullam auctor ns scelerisque, sagittis tortor et, maximus metus.",
             },
-          ].map((post) => (
-            <li key={post.id}>
+          ].map((post, index) => (
+            <li
+              key={post.id}
+              ref={(el) => (postRefs.current[index] = el)}
+              className="fade-in"
+            >
               <div className="blog-card">
                 <figure className="card-banner img-holder" style={{ width: "100%", height: "auto" }}>
                   <img
@@ -98,11 +129,11 @@ const RecentPosts: React.FC = () => {
                   <ul className="avatar-list absolute">
                     {post.authors.map((author) => (
                       <li className="avatar-item" key={author}>
-                        <a href="#" className="avatar img-holder" style={{ width: 100, height: 100 }}>
+                        <a href="#" className="avatar img-holder" style={{ width: "auto", height: 100 }}>
                           <img
                             src={`./assets/images/author-${author}.jpg`}
                             width="100"
-                            height="100"
+                            height="auto" /* later change */
                             loading="lazy"
                             alt="Author"
                             className="img-cover"
@@ -113,7 +144,7 @@ const RecentPosts: React.FC = () => {
                   </ul>
                 </figure>
 
-                <div className="card-content">
+                <div className="card-content">z
                   <ul className="card-meta-list">
                     {post.tags.map((tag) => (
                       <li key={tag}>

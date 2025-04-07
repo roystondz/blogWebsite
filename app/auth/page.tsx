@@ -10,7 +10,7 @@ const AuthForm = () => {
   };
 
   return (
-    <div className={`${styles.container} ${isActive ? styles.active : ""}`} id="container">
+    <div className={`${styles.container} ${isActive ? styles.active : ""} `} id="container">
       {/* Sign In Form */}
       <div className={`${styles.formContainer} ${styles.signIn}`}>
         <form>
@@ -38,7 +38,7 @@ const AuthForm = () => {
       </div>
 
       {/* Sign Up Form */}
-      <div className={`${styles.formContainer} ${styles.signUp}`}>
+      <div className={`${styles.formContainer} ${styles.signUp} items-center`}>
         <form>
           <h1>Create Account</h1>
           <div className={styles.socialIcons}>

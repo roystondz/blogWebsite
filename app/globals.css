@@ -137,6 +137,7 @@ body {
   font-family: var(--ff-inter);
   color: var(--eerie-black);
   font-size: 1.6rem;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
 
   line-height: 1.5;
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -251,6 +252,8 @@ body {
   margin-block-end: -20px;
   margin-inline: -15px;
   padding-inline: 15px;
+  /* scroll-snap-type: x mandatory; */
+
 }
 
 .has-scrollbar::-webkit-scrollbar { height: 10px; }
@@ -343,13 +346,141 @@ body {
   /**
    * RECOMMENDED POST
    */
-
-   .recommended .grid-list {
+  html {
+    scroll-behavior: smooth;
+  }
+  .recommended .grid-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 10px;
     justify-content: center;
     align-items: start;
+    overflow-y: auto; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Add smooth scrolling */
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
+  .fade-in {
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+  }
+
+  .checkbox-wrapper-41 {
+    --size: 70px;
+    margin-left: 10px;
+  }
+  .checkbox-wrapper-41 {
+    --toggle-size: 40px;
+    --slider-color: #ccc;
+    --slider-checked-color: #4f46e5;
+    --thumb-color: white;
+    --thumb-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  
+    position: relative;
+    display: inline-block;
+    width: var(--toggle-size);
+    height: calc(var(--toggle-size) / 2);
+  }
+    
+  .checkbox-wrapper-41 input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    background-color: #fff;
+    border: 3px solid #222;
+    border-radius: 30px 100px 100px 100px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+  }
+  
+  .checkbox-wrapper-41 input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 2);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.7);
+    border: 3px solid #222;
+    border-radius: 30px 100px 100px 100px;
+    background-color: #333;
+    box-sizing: border-box;
+    transition: all 0.5s;
+  }
+  
+  .checkbox-wrapper-41 input[type="checkbox"]:checked {
+    background-color: #fff;
+    border-radius: 100px 100px 30px 100px;
+  }
+  
+  .checkbox-wrapper-41 input[type="checkbox"]:checked::before {
+    left: 50%;
+    background-color: #fff;
+    border-radius: 100px 100px 30px 100px;
+  }
+
+  /* globals.css or wherever your base styles live */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Optionally override specific components for dark mode */
+.dark-mode .header {
+  background-color: #121212;
+}
+/* .strong {
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+} */
+.strong {
+  color: #000000;
+}
+
+body.dark-mode .strong {
+  color: #ffffff;
+}
+
+body.dark-mode .newsletter-form {
+  background-color: #1a1a1a;
+  color: #eee;
+}
+
+body.dark-mode .email-field {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .newsletter-text {
+  color: #bbb;
+}
+body.dark-mode .btn {
+  background-color: #ffffff;
+  color: #333;
+}
+body.dark-mode .btn:hover{
+  background-color: var(--blue-ryb);
+  color: #ffffff;
+  cursor: pointer;
+  border: #121212;
+  transform: translateX(5px)
+}
+

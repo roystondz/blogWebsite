@@ -7,14 +7,13 @@
   position: relative;
   overflow: hidden;
   width: 768px;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  height: 80vh; /* Full viewport height */
+  height: 80vh; 
   max-width: 100%;
   min-height: 480px;
   margin-top: 60px;
   margin-left:300px;
-  
+  align-items: center;
+  justify-content: center;
 }
 
 .container p {

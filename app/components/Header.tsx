@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import IonIcon from './IonIcon';
 import Link from 'next/link';
@@ -18,8 +18,31 @@ const Header: React.FC = () => {
     setIsMenuVisible((prev) => !prev);
     if (isSearchBarVisible) setIsSearchBarVisible(false);
   };
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('darkMode') === 'enabled';
+    }
+    return false;
+  });
+
+  useLayoutEffect(() => {
+    const body = document.body;
+    if (darkMode) {
+      body.classList.add('dark-mode');
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  }, [darkMode]);
+
+  const handleDarkModeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDarkMode(e.target.checked);
+  };
 
   return (
+
+
     <header className="header section" data-header>
       <div className="container">
         {/* Logo */}
@@ -56,7 +79,7 @@ const Header: React.FC = () => {
             aria-label="search"
             onClick={toggleSearchBar}
           >
-              <SearchIcon />
+            <SearchIcon />
           </button>
 
 
@@ -64,6 +87,19 @@ const Header: React.FC = () => {
           <Link href="/auth/">
             <button className="btn mobile-login-btn">Login</button>
           </Link>
+
+          {/* Toggle */}
+          <div className="checkbox-wrapper-41">
+            <input
+              type="checkbox"
+              id="darkModeToggle"
+              checked={darkMode}
+              onChange={handleDarkModeToggle}
+            />
+            <span className="slider"></span>
+          </div>
+
+
 
           {/* Mobile Menu Toggle Button */}
           <button
@@ -122,6 +158,8 @@ const Header: React.FC = () => {
           }}
         ></div>
       )}
+
+
     </header>
   );
 };
