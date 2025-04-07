@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 const TypingAnimation: React.FC = () => {
   const sentences = [
     "Hey, we’re BlogSite.",
-    "See our thoughts, stories, and ideas.",
+    "See our thoughts, stories.",
     "Welcome to our creative space.",
-    "Explore the world of blogging with us.",
+    "Explore the world of blogging.",
   ];
 
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);

@@ -446,10 +446,7 @@ body.dark-mode {
 .dark-mode .header {
   background-color: #121212;
 }
-/* .strong {
-  color: #fff;
-  transition: color 0.3s ease-in-out;
-} */
+
 .strong {
   color: #000000;
 }

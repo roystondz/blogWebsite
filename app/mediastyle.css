@@ -343,6 +343,7 @@
       transparent 100% 
     );
     margin: 20px 0; 
+    position: static;
     animation: breathe-sideways 1s infinite ease-in-out;
   }
   
