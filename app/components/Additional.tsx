@@ -40,7 +40,7 @@ const RecentPosts: React.FC = () => {
 
           <div className="top-author">
             <ul className="avatar-list">
-              {[1, 2, 3, 4, 5].map((author) => (
+              {[1, 2, 3,].map((author) => (
                 <li className="avatar-item" key={author}>
                   <a href="#" className="avatar large img-holder" style={{ width: 100, height: 100 }}>
                     <img
@@ -63,7 +63,7 @@ const RecentPosts: React.FC = () => {
           {[
             {
               id: 1,
-              image: "recent-1.avif",
+              image: "recent-4.jpg",
               authors: [1, 2],
               tags: ["Lifestyle", "People", "Review"],
               title: "Creating is a privilege but it’s also a gift",
@@ -72,14 +72,14 @@ const RecentPosts: React.FC = () => {
             {
               id: 2,
               image: "recent-2.jpg",
-              authors: [5],
+              authors: [3],
               tags: ["Design", "Product", "Idea"],
               title: "Being unique is better than being perfect",
               text: "Nam in pretium dui.a.",
             },
             {
               id: 3,
-              image: "recent-3.jpg",
+              image: "recent-2.jpg",
               authors: [2, 5, 1],
               tags: ["Idea", "Product", "Review"],
               title: "Now we’re getting somewhere",
@@ -95,7 +95,7 @@ const RecentPosts: React.FC = () => {
             },
             {
               id: 5,
-              image: "recent-5.jpg",
+              image: "recent-2.jpg",
               authors: [1, 6],
               tags: ["People", "Story", "Lifestyle"],
               title: "Every day, in every city and town across the country",
@@ -103,7 +103,7 @@ const RecentPosts: React.FC = () => {
             },
             {
               id: 6,
-              image: "recent-6.jpg",
+              image: "recent-4.jpg",
               authors: [6],
               tags: ["People", "Review", "Story"],
               title: "Your voice, your mind, your story, your vision",
