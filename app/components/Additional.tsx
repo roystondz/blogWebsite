@@ -46,7 +46,7 @@ const RecentPosts: React.FC = () => {
                     <img
                       src={`./assets/images/author-${author}.jpg`}
                       width="100"
-                      height="100"
+                      height="40"
                       alt="top author"
                       className="img-cover"
                     />
@@ -64,7 +64,7 @@ const RecentPosts: React.FC = () => {
             {
               id: 1,
               image: "recent-4.jpg",
-              authors: [1, 2],
+              authors: [2],
               tags: ["Lifestyle", "People", "Review"],
               title: "Creating is a privilege but it’s also a gift",
               text: "Nullam vel risus.",
@@ -80,7 +80,7 @@ const RecentPosts: React.FC = () => {
             {
               id: 3,
               image: "recent-2.jpg",
-              authors: [2, 5, 1],
+              authors: [1],
               tags: ["Idea", "Product", "Review"],
               title: "Now we’re getting somewhere",
               text: "Class aptentat.",
@@ -96,7 +96,7 @@ const RecentPosts: React.FC = () => {
             {
               id: 5,
               image: "recent-2.jpg",
-              authors: [1, 6],
+              authors: [6],
               tags: ["People", "Story", "Lifestyle"],
               title: "Every day, in every city and town across the country",
               text: "Morbi a faet sodales metus elementum. \viverra.",
@@ -144,7 +144,7 @@ const RecentPosts: React.FC = () => {
                   </ul>
                 </figure>
 
-                <div className="card-content">z
+                <div className="card-content">
                   <ul className="card-meta-list">
                     {post.tags.map((tag) => (
                       <li key={tag}>

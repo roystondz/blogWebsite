@@ -52,7 +52,16 @@ const Header: React.FC = () => {
             width={129}
             height={40}
             alt="Blogsite logo"
+            className="light-logo"
+
           />
+          <Image
+            src="/assets/images/BlogSit-White.png" // Dark mode logo
+            width={200}
+            height={100}
+            alt="Blogsite logo"
+            className="dark-logo"
+            />
         </a>
 
         {/* Navigation Menu */}

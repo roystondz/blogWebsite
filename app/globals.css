@@ -180,7 +180,7 @@ body {
 .h5 { line-height: 1.2; }
 
 .h1,
-.h2 { font-weight: var(--fw-300); }
+.h2 { font-weight: varf(--fw-300); }
 
 .h1 { font-size: var(--fs-1); }
 
@@ -312,8 +312,10 @@ body {
   gap: 5px;
 }
 
+/* Default light mode */
 .card-tag {
-  background-color: var(--cultured);
+  background-color: #000;
+  color: var(--gainsboro); /* Assuming light text on dark bg */
   font-size: var(--fs-9);
   font-weight: var(--fw-500);
   padding: 2px 8px;
@@ -321,8 +323,22 @@ body {
   transition: var(--transition-1);
 }
 
-.card-tag:is(:hover, :focus) { background-color: var(--gainsboro); }
+/* Dark mode override */
+body.dark-mode .card-tag {
+  background-color: #ffffff; /* Light bg in dark mode */
+  color: var(--eerie-black); 
+}
 
+/* Hover states */
+.card-tag:is(:hover, :focus) {
+  background-color: var(--gainsboro);
+  color: var(--eerie-black);
+}
+
+body.dark-mode .card-tag:is(:hover, :focus) {
+  background-color: var(--eerie-black);
+  color: var(--gainsboro);
+}
 .blog-card .card-title {
   margin-block: 8px 12px;
   text-decoration-thickness: 2px;
@@ -332,7 +348,7 @@ body {
   font-size: var(--fs-8);
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  /* -webkit-line-clamp: 3; */
   overflow: hidden;
   padding-inline-end: 20px;
 }
@@ -437,24 +453,30 @@ body {
   }
 
   /* globals.css or wherever your base styles live */
+/* globals.css or wherever your base styles live */
+
+/* Base dark mode styles */
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
 
-/* Optionally override specific components for dark mode */
-.dark-mode .header {
-  background-color: #121212;
+/* Header dark mode */
+body.dark-mode .header {
+  background-color: #121212;  
+    /* border-bottom: 1px solid #333; */
 }
 
-.strong {
+/* Strong text - fixed the class name (was .strong, should be strong) */
+strong {
   color: #000000;
 }
 
-body.dark-mode .strong {
+body.dark-mode strong {
   color: #ffffff;
 }
 
+/* Newsletter form dark mode */
 body.dark-mode .newsletter-form {
   background-color: #1a1a1a;
   color: #eee;
@@ -466,18 +488,64 @@ body.dark-mode .email-field {
   border: 1px solid #555;
 }
 
+body.dark-mode .email-field::placeholder {
+  color: #aaa;
+}
+
 body.dark-mode .newsletter-text {
   color: #bbb;
 }
+
+/* Button styles with smooth transitions */
+.btn {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
 body.dark-mode .btn {
   background-color: #ffffff;
   color: #333;
 }
-body.dark-mode .btn:hover{
-  background-color: var(--blue-ryb);
-  color: #ffffff;
-  cursor: pointer;
-  border: #121212;
-  transform: translateX(5px)
+
+.btn:hover {
+  transform: translateX(5px);
 }
 
+body.dark-mode .btn:hover {
+  background-color: var(--blue-ryb);
+  color: #ffffff;
+  border-color: #121212;
+}
+
+/* Animation container dark mode adjustments */
+body.dark-mode .typing-animation-wrapper {
+  color: #fff; /* Ensure text color is visible */
+}
+
+/* Lottie animation container dark mode */
+body.dark-mode .hero-right {
+  /* Add any specific dark mode adjustments for your animation container */
+}
+
+/* Logo styles */
+/* Default state - show light, hide dark */
+.light-logo {
+  display: block;
+}
+
+.dark-logo {
+  display: none;
+}
+
+/* Dark mode state - show dark, hide light */
+body.dark-mode .light-logo {
+  display: none;
+}
+
+body.dark-mode .dark-logo {
+  display: block;
+}
