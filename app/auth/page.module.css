@@ -6,12 +6,12 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
-  width: 768px;
+  width: 668px;
   height: 80vh; 
   max-width: 100%;
   min-height: 480px;
   margin-top: 60px;
-  margin-left:300px;
+  margin-left:800px;
   align-items: center;
   justify-content: center;
 }
@@ -46,13 +46,13 @@
   text-transform: uppercase;
   margin-top: 10px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  transition: background-color 0.1s, color 0.1s; /* Smooth transition */
 
 }
 
 .container button:hover {
   background-color: #46036d;
-  color: black;
+  color: #ffff;
   transition: 0.25s ease-in-out;
   border: 1px solid #333;
 }
@@ -161,7 +161,7 @@
   width: 50%;
   height: 100%;
   overflow: hidden;
-  transition: all 1.0s ease-in-out;
+  transition: all .5s ease-in-out;
   border-radius: 150px 0 0 100px;
   z-index: 1000;
 }
@@ -283,3 +283,37 @@
       height: 30px;
     }
   }
+
+  
+  @media (max-width: 880px) {
+    .container {
+      width: 100%; /* Full width on very small screens */
+      min-height: 100vh;
+      margin: 0;  
+    }
+  
+    .formContainer {
+      padding: 0 20px; /* fixed responsiveness for the frikking mobile  */
+    }
+  
+    .togglePanel {
+      padding: 0 10px; 
+    }
+  
+    .container button {
+      padding: 6px 20px; 
+      font-size: 10px; 
+    }
+  
+    .container input {
+      padding: 6px 10px; 
+      font-size: 11px; 
+    }
+  
+    .socialIcons a {
+      width: 30px; /* Even smaller social icons */
+      height: 30px;
+    }
+  }
+
+  

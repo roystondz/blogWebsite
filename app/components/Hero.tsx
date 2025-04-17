@@ -4,6 +4,8 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import TypingAnimation from './TypingAnimation';
 import '../hexagon.css';
 import HexagonLoader from './HexLoader';
+import VerticalCategoryMenu from './Category';
+
 const Hero = () => {
   return (
     <section className="hero-section" aria-label="home">
@@ -12,10 +14,10 @@ const Hero = () => {
           <div className="typing-animation-wrapper">
             <TypingAnimation />
           </div>
-          
-          <HexagonLoader/>
 
-          
+          <HexagonLoader />
+
+
           {/* <div className="hero-right">
             <DotLottieReact
               src="https://lottie.host/523d5a0a-f41b-4180-9c0d-c7bac1bbb703/ipMtwafhb7.lottie"
@@ -26,21 +28,26 @@ const Hero = () => {
           </div> */}
         </div>
 
-        <div className="newsletter-wrapper">
-          <form action="" className="newsletter-form">
-            <input
-              type="email"
-              name="email_address"
-              placeholder="Your email address"
-              className="email-field"
-            />
-            <button type="submit" className="btn">Subscribe</button>
-          </form>
 
-          <p className="newsletter-text">
-            Get the <strong>email newsletter</strong> and access to updates
-          </p>
-        </div>
+        <div style={{ display: 'flex', justifyContent: 'left', gap: '60px', marginTop: '40px', flexWrap: 'wrap' }}>
+          <VerticalCategoryMenu />
+          </div>
+
+          <div className="newsletter-wrapper" style={{ marginLeft: 'auto' }}>
+            <form action="" className="newsletter-form">
+              <input
+                type="email"
+                name="email_address"
+                placeholder="Your email address"
+                className="email-field"
+              />
+              <button type="submit" className="btn">Subscribe</button>
+            </form>
+
+            <p className="newsletter-text">
+              Get the <strong>email newsletter</strong> and access to updates
+            </p>
+          </div>
       </div>
     </section>
   );

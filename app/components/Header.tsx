@@ -4,20 +4,30 @@ import Image from 'next/image';
 import IonIcon from './IonIcon';
 import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
+import Menu from './Menu';
 
 const Header: React.FC = () => {
   const [isSearchBarVisible, setIsSearchBarVisible] = useState<boolean>(false);
   const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const toggleSearchBar = () => {
     setIsSearchBarVisible((prev) => !prev);
     if (isMenuVisible) setIsMenuVisible(false);
   };
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle search functionality here
+    console.log('Searching for:', searchQuery);
+    // You might want to navigate to a search page or filter results
+  };
+
   const toggleMenu = () => {
     setIsMenuVisible((prev) => !prev);
     if (isSearchBarVisible) setIsSearchBarVisible(false);
   };
+
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('darkMode') === 'enabled';
@@ -39,10 +49,8 @@ const Header: React.FC = () => {
   const handleDarkModeToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDarkMode(e.target.checked);
   };
-
+  
   return (
-
-
     <header className="header section" data-header>
       <div className="container">
         {/* Logo */}
@@ -53,51 +61,35 @@ const Header: React.FC = () => {
             height={40}
             alt="Blogsite logo"
             className="light-logo"
-
           />
           <Image
-            src="/assets/images/BlogSit-White.png" // Dark mode logo
+            src="/assets/images/BlogSit-White.png"
             width={200}
             height={100}
             alt="Blogsite logo"
             className="dark-logo"
-            />
+          />
         </a>
-
-        {/* Navigation Menu */}
-        <nav className={`navbar ${isMenuVisible ? 'active' : ''}`} data-navbar>
-          <ul className="navbar-list">
-            <li className="navbar-item">
-              <a href="#" className="navbar-link hover:underline" data-nav-link>
-                Home
-              </a>
-            </li>
-            <li className="navbar-item">
-              <a href="#" className="navbar-link hover:underline" data-nav-link>
-                Recent Post
-              </a>
-            </li>
-          </ul>
-        </nav>
-
+        
+        {/* Menu Component - Now wrapped with navbar */}
+        <div className={`navbar ${isMenuVisible ? 'active' : ''}`}>
+        <Menu toggleSearchBar={toggleSearchBar} />
+        </div>
+        
         {/* Wrapper for Search, Login, and Menu Toggle Buttons */}
         <div className="wrapper">
-          {/* Search Button (Visible on Mobile) */}
-          <button
-            className="search-btn"
-            aria-label="search"
-            onClick={toggleSearchBar}
+          {/* Hamburger Menu Toggle Button */}
+          <button 
+            className={`nav-toggle-btn ${isMenuVisible ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
           >
-            <SearchIcon />
+            <span className="span one"></span>
+            <span className="span two"></span>
+            <span className="span three"></span>
           </button>
 
-
-          {/* Login Button */}
-          <Link href="/auth/">
-            <button className="btn mobile-login-btn">Login</button>
-          </Link>
-
-          {/* Toggle */}
+          {/* Dark Mode Toggle */}
           <div className="checkbox-wrapper-41">
             <input
               type="checkbox"
@@ -107,54 +99,8 @@ const Header: React.FC = () => {
             />
             <span className="slider"></span>
           </div>
-
-
-
-          {/* Mobile Menu Toggle Button */}
-          <button
-            className={`nav-toggle-btn ${isMenuVisible ? 'active' : ''}`}
-            aria-label="toggle menu"
-            onClick={toggleMenu}
-            data-nav-toggler
-          >
-            <span className="span one"></span>
-            <span className="span two"></span>
-            <span className="span three"></span>
-          </button>
         </div>
       </div>
-
-      {/* Search Bar (Conditionally Rendered) */}
-      {isSearchBarVisible && (
-        <div className={`search-bar ${isSearchBarVisible ? 'active' : ''}`} data-search-bar>
-          <div className="input-wrapper">
-            <input
-              type="search"
-              name="search"
-              placeholder="Search"
-              className="input-field"
-            />
-            {/* Search Icon Inside the Search Bar */}
-            <button
-              className="search-submit-btn"
-              aria-label="submit search"
-              type="submit"
-            >
-              <IonIcon name="search-outline" ariaHidden={true} />
-            </button>
-            {/* Close Button */}
-            <button
-              className="search-close-btn"
-              aria-label="close search bar"
-              onClick={toggleSearchBar}
-              data-search-toggler
-            >
-              <IonIcon name="close-outline" ariaHidden={true} />
-            </button>
-          </div>
-          <p className="search-bar-text">Please enter at least 3 characters</p>
-        </div>
-      )}
 
       {/* Overlay (Conditionally Rendered) */}
       {(isSearchBarVisible || isMenuVisible) && (
@@ -167,8 +113,6 @@ const Header: React.FC = () => {
           }}
         ></div>
       )}
-
-
     </header>
   );
 };

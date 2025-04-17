@@ -51,7 +51,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ imageSrc, imageAlt, authors, tags, 
         </ul>
 
         <h3 className="h4">
-          <a href="#" className="card-title hover:underline">
+          <a href="#" className="card-title">
             {title}
           </a>
         </h3>

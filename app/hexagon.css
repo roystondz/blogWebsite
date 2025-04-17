@@ -3,12 +3,13 @@
     width: 300px;
     height: 200px;
     position: absolute;
-    left: 50%;
+    left: 55%;
     margin-left: 250px;
     top: 50%;
     margin-top: -100px;
     transform: scale(1.4);
   }
+
  
   .hex-brick {
     background: #ffffff;
@@ -366,3 +367,60 @@
     50% { background: #aaaaaa; }
     100% { background: #ffffff; }
   }
+
+  @media (min-width:1440px){
+    .socket {
+      transform: scale(1.2);
+      margin-left: 200px;
+  }
+}
+@media (min-width:1340px){
+  .socket {
+    transform: scale(1.0);
+    margin-left: 200px;
+}
+}
+@media (max-width: 1245px) {
+  .socket {
+    transform: scale(1.);
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .socket {
+    transform: scale(1);
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 992px) {
+  .socket {
+    transform: scale(1);
+    margin-left: 100px;
+    left: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .socket {
+    transform: scale(0.7);
+    margin-left: 50px;
+    left: 35%;
+  }
+}
+
+@media (max-width: 576px) {
+  .socket {
+    transform: scale(0.5);
+    margin-left: 0;
+    left: 30%;
+  }
+}
+
+@media (max-width: 400px) {
+  .socket {
+    transform: scale(0.4);
+    left: 25%;
+  }
+}
